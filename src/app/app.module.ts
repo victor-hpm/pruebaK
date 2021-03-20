@@ -6,9 +6,10 @@ import { LayoutComponent } from './layout/layout.component';
 // Modulos
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { LayoutAuthComponent } from './layout-auth/layout-auth.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent],
+  declarations: [AppComponent, LayoutComponent, LayoutAuthComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],

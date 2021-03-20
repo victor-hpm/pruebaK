@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-// Componentes
+// Componentes layout
 import { LayoutComponent } from './layout/layout.component';
+import { LayoutAuthComponent } from './layout-auth/layout-auth.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent,
+    component: LayoutAuthComponent,
     children: [
       {
         path: 'auth',
@@ -20,6 +21,20 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'solicitudes',
+        loadChildren: () =>
+          import('./solicitudes/solicitudes.module').then(
+            (m) => m.SolicitudesModule
+          ),
+      },
+    ],
+  },
+
   {
     path: '**',
     loadChildren: () =>
